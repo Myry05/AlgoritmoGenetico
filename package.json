@@ -1,0 +1,51 @@
+{
+  "name": "mobile-app-project",
+  "version": "1.0.0",
+  "description": "Aplicación móvil completa con chat, videollamadas y autenticación",
+  "scripts": {
+    "install-all": "npm install && cd mobile && npm install && cd ../backend && npm install",
+    "setup": "./install.sh",
+    "start": "concurrently \"npm run backend\" \"npm run mobile\"",
+    "backend": "cd backend && npm run dev",
+    "mobile": "cd mobile && npm start",
+    "android": "cd mobile && npm run android",
+    "ios": "cd mobile && npm run ios",
+    "test": "concurrently \"npm run test:backend\" \"npm run test:mobile\"",
+    "test:backend": "cd backend && npm test",
+    "test:mobile": "cd mobile && npm test",
+    "lint": "concurrently \"npm run lint:backend\" \"npm run lint:mobile\"",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:mobile": "cd mobile && npm run lint",
+    "clean": "concurrently \"npm run clean:backend\" \"npm run clean:mobile\"",
+    "clean:backend": "cd backend && rm -rf node_modules && npm install",
+    "clean:mobile": "cd mobile && rm -rf node_modules && npm install",
+    "build:mobile": "cd mobile && npx react-native run-android --variant=release",
+    "deploy:backend": "cd backend && npm run start",
+    "dev": "npm start",
+    "postinstall": "echo '🎉 Instalación completada. Ejecuta npm run setup para configuración adicional.'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/mobile-app-project.git"
+  },
+  "keywords": [
+    "react-native",
+    "nodejs",
+    "mongodb",
+    "chat",
+    "video-call",
+    "authentication",
+    "mobile-app",
+    "socket.io",
+    "webrtc"
+  ],
+  "author": "Tu Nombre <tu.email@ejemplo.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
